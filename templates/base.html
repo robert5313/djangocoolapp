@@ -1,0 +1,53 @@
+<!-- base.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reloca Careers</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <header>
+        <!-- Add your header content here -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Reloca Careers</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <!-- Add profile image with border-radius of 50% -->
+                    <li class="nav-item">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Add search bar -->
+            <form class="form-inline my-2 my-lg-0 ml-auto" action="{% url 'search' %}" method="GET">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="query">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </nav>
+    </header>
+
+    <main class="container mt-4 flex-fill">
+        <!-- Add your main content here -->
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="bg-light text-dark text-center fixed-bottom">
+        <!-- Add your footer content here -->
+        <p>&copy; 2023 My Website. All rights reserved.</p>
+    </footer>
+
+    <!-- Add Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
